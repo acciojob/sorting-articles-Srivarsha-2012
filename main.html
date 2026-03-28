@@ -5,7 +5,6 @@
 </head>
 <body>
 
-    <h2>Sorted Band List</h2>
     <ul id="band"></ul>
 
     <script>
@@ -25,17 +24,17 @@
             'An Old Dog'
         ];
 
-        // Function to remove articles
-        function strip(bandName) {
-            return bandName.replace(/^(a |an |the )/i, '').trim();
+        // Remove articles
+        function strip(name) {
+            return name.replace(/^(a |an |the )/i, '').trim();
         }
 
-        // Sort bands
+        // Sort bands ignoring articles
         const sortedBands = bands.sort((a, b) => {
             return strip(a).localeCompare(strip(b));
         });
 
-        // Display in HTML
+        // Display on webpage
         const ul = document.getElementById('band');
 
         sortedBands.forEach(band => {
